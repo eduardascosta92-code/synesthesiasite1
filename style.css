@@ -600,3 +600,139 @@ a {
     gap: 24px;
   }
 }
+.orders-hero {
+  text-align: center;
+  padding: 92px 0 44px;
+}
+
+.orders-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  line-height: 1.08;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.orders-description {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.orders-form-section {
+  padding: 20px 0 88px;
+}
+
+.orders-form-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  background: #f7f1e8;
+  padding: 34px 32px 26px;
+}
+
+.orders-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #7c7065;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #d6c9ba;
+  background: transparent;
+  padding: 14px 14px;
+  font: inherit;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a99c90;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #b8a896;
+  box-shadow: 0 0 0 2px rgba(184, 168, 150, 0.14);
+}
+
+.choice-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.choice-pill {
+  position: relative;
+  cursor: pointer;
+}
+
+.choice-pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice-pill span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid #d6c9ba;
+  font-size: 0.78rem;
+  color: var(--text);
+  background: transparent;
+  transition: 0.2s ease;
+}
+
+.choice-pill input:checked + span {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.full {
+  width: 100%;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .orders-form-wrap {
+    padding: 24px 18px 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
