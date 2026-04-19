@@ -1,132 +1,374 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encomendas | Synesthesia.</title>
-  <meta name="description" content="Solicite uma encomenda personalizada da Synesthesia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">Synesthesia.</a>
-      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="encomendas.html">Encomendas</a>
-        <a href="contato.html">Contato</a>
-      </nav>
-    </div>
-  </header>
+:root {
+  --bg: #f5efe7;
+  --bg-alt: #efe7dc;
+  --line: #ddd3c6;
+  --text: #5a3424;
+  --muted: #7a6a5f;
+  --navy: #173b6d;
+  --white: #ffffff;
+}
 
-  <main>
-    <section class="section-xl center-text">
-      <div class="container narrow">
-        <p class="eyebrow">Encomendas personalizadas</p>
-        <h1>Um aroma desenhado para o seu momento.</h1>
-        <p class="lead compact center-copy">
-          Criamos blends exclusivos, embalagens com sua identidade e edições numeradas. Conte sobre seu projeto e responderemos em até 2 dias úteis com uma proposta.
-        </p>
-      </div>
-    </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <section class="section pt-small">
-      <div class="container">
-        <form class="custom-form" action="https://formsubmit.co/eduardascosta92@gmail.com" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="Nova encomenda personalizada - Synesthesia">
-          <input type="hidden" name="_template" value="table">
+html {
+  scroll-behavior: smooth;
+}
 
-          <label>
-            Nome completo *
-            <input type="text" name="nome" required>
-          </label>
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+}
 
-          <div class="form-row">
-            <label>
-              E-mail *
-              <input type="email" name="email" required>
-            </label>
-            <label>
-              Telefone (opcional)
-              <input type="tel" name="telefone">
-            </label>
-          </div>
+img {
+  max-width: 100%;
+  display: block;
+}
 
-          <fieldset>
-            <legend>Tipo de produto</legend>
-            <div class="choice-group">
-              <label class="choice-pill"><input type="radio" name="tipo_de_produto" value="Vela" checked> <span>Vela</span></label>
-              <label class="choice-pill"><input type="radio" name="tipo_de_produto" value="Difusor"> <span>Difusor</span></label>
-              <label class="choice-pill"><input type="radio" name="tipo_de_produto" value="Ambos"> <span>Ambos</span></label>
-            </div>
-          </fieldset>
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-          <div class="form-row">
-            <label>
-              Cenário (opcional)
-              <input type="text" name="cenario" placeholder="Casamento, presente, marca...">
-            </label>
-            <label>
-              Quantidade aproximada
-              <input type="text" name="quantidade" placeholder="Ex: 50 unidades">
-            </label>
-          </div>
+.container {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
 
-          <label>
-            Aromas que você ama (opcional)
-            <input type="text" name="aromas" placeholder="Cedro, baunilha, jasmim...">
-          </label>
+/* HEADER */
+.header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
 
-          <label>
-            Detalhes do projeto *
-            <textarea name="detalhes" rows="5" placeholder="Conte sobre a estética, embalagem, prazo e qualquer referência." required></textarea>
-          </label>
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  gap: 24px;
+}
 
-          <button type="submit" class="btn btn-primary btn-full">Enviar pedido</button>
-          <p class="form-note">Respondemos em até 2 dias úteis.</p>
-        </form>
-      </div>
-    </section>
-  </main>
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  color: var(--text);
+}
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="index.html" class="brand footer-brand">Synesthesia.</a>
-        <p>Onde a criatividade encontra os sentidos.</p>
-      </div>
+.nav nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
 
-      <div>
-        <p class="footer-title">Navegar</p>
-        <ul>
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="encomendas.html">Encomendas personalizadas</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
-      </div>
+.nav nav a {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #7d7267;
+  transition: color 0.2s ease;
+}
 
-      <div>
-        <p class="footer-title">Conecte-se</p>
-        <ul>
-          <li><a href="mailto:eduardascosta92@gmail.com">eduardascosta92@gmail.com</a></li>
-          <li><a href="https://instagram.com/synesthesiabrand" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
+.nav nav a:hover {
+  color: var(--navy);
+}
 
-    <div class="container footer-bottom">
-      <p>© 2025 Synesthesia. Feito à mão, com afeto.</p>
-    </div>
-  </footer>
+/* TAG */
+.tag {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--navy);
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.tag.light {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 72px;
+  align-items: center;
+  padding: 88px 0 96px;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.hero-text h1 span {
+  color: var(--navy);
+  font-style: italic;
+}
+
+.hero-text p {
+  max-width: 560px;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  border: 1px solid var(--navy);
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.btn-white {
+  background: #f6efe6;
+  color: var(--text);
+  border: 1px solid #f6efe6;
+}
+
+.btn-white:hover {
+  transform: translateY(-1px);
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 6px;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #6e6258;
+  border-bottom: 1px solid #b9ab9a;
+}
+
+/* MANIFESTO */
+.manifesto {
+  padding: 8px 0 82px;
+  text-align: center;
+}
+
+.manifesto-text {
+  max-width: 840px;
+  margin: 0 auto;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.45;
+  color: var(--text);
+}
+
+/* FEATURED */
+.featured {
+  padding: 10px 0 92px;
+}
+
+.featured-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.featured-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 0.95 / 1;
+  object-fit: cover;
+  margin-bottom: 18px;
+  background: #ebe2d7;
+}
+
+.card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.98rem;
+  max-width: 96%;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(90deg, #1c3f6f 0%, #163b6d 72%, #1b355c 72%, #1b355c 100%);
+  padding: 72px 0;
+}
+
+.cta-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.cta h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.16;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 52px 0 34px;
+  background: var(--bg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.footer h4 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #7d7267;
+  margin-bottom: 14px;
+}
+
+.footer p,
+.footer a {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer a {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 980px) {
+  .hero,
+  .cta-content,
+  .footer-grid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    gap: 40px;
+    padding: 64px 0 72px;
+  }
+
+  .hero-image img {
+    height: auto;
+  }
+
+  .featured-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta {
+    background: #173b6d;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+
+  .nav nav {
+    gap: 14px;
+  }
+
+  .hero-text h1,
+  .manifesto-text,
+  .featured-header h2,
+  .cta h2 {
+    line-height: 1.12;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-link,
+  .btn-primary,
+  .btn-white {
+    justify-content: center;
+  }
+}
