@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produtos | Synesthesia.</title>
-  <meta name="description" content="Coleção de velas aromáticas e difusores artesanais Synesthesia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encomendas | Synesthesia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">Synesthesia.</a>
-      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-      <nav class="site-nav">
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">Synesthesia.</div>
+      <nav>
         <a href="index.html">Início</a>
         <a href="produtos.html">Produtos</a>
         <a href="sobre.html">Sobre</a>
@@ -26,165 +24,113 @@
   </header>
 
   <main>
-    <section class="section-xl page-intro">
-      <div class="container narrow-left">
-        <p class="eyebrow">Coleção</p>
-        <h1>Aromas para habitar.</h1>
-        <p class="lead compact">
-          Cada peça é feita à mão em pequenos lotes. Cera de coco natural, pavios de algodão e essências selecionadas em blends exclusivos.
-        </p>
-      </div>
+    <section class="orders-hero container">
+      <span class="tag">Encomendas personalizadas</span>
+      <h1 class="orders-title">Um aroma desenhado para o seu momento.</h1>
+      <p class="orders-description">
+        Criamos blends exclusivos, embalagens com sua identidade e edições numeradas. Conte sobre seu projeto e responderemos em até 2 dias úteis com uma proposta.
+      </p>
     </section>
 
-    <section class="section product-section pt-small">
-      <div class="container">
-        <p class="eyebrow">Difusores de ambiente</p>
-        <h2>Perfumação contínua, presença discreta</h2>
+    <section class="orders-form-section container">
+      <div class="orders-form-wrap">
+        <form
+          class="orders-form"
+          action="https://formsubmit.co/eduardascosta92@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Nova encomenda personalizada - Synesthesia">
+          <input type="hidden" name="_captcha" value="false">
 
-        <div class="product-grid product-grid-2 mt-lg">
-          <article class="product-card">
-            <img src="assets/difusor-abraco.png" alt="Difusor Abraço" />
-            <div class="product-info">
-              <div class="product-header">
-                <h3>Difusor Abraço</h3>
-                <span>R$ 49,90</span>
-              </div>
-              <p>Difusores e fragrâncias na intensidade certa para transformar o conforto em bem-estar. Acompanha varetas em vidro transparente.</p>
-              <small>110 ml</small>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <img src="assets/difusor-refugio.png" alt="Difusor Refúgio" />
-            <div class="product-info">
-              <div class="product-header">
-                <h3>Difusor Refúgio</h3>
-                <span>R$ 49,90</span>
-              </div>
-              <p>Lavanda, cipreste e notas florais com toque amadeirado, ideal para momentos de pausa e tranquilidade. Acompanha varetas em vidro transparente.</p>
-              <small>110 ml</small>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section product-section">
-      <div class="container">
-        <p class="eyebrow">Coleção Lumière</p>
-        <h2>Velas aromáticas em latinha</h2>
-        <p class="section-copy">100g de cera de coco e blends especiais de essências personalizadas para perfumar pequenos rituais do dia a dia.</p>
-
-        <div class="product-grid product-grid-3 mt-lg">
-          <article class="product-card small-card">
-            <img src="assets/vela-ambar.png" alt="Vela Âmbar" />
-            <div class="product-info">
-              <div class="product-header">
-                <h3>Âmbar</h3>
-                <span>R$ 39,90</span>
-              </div>
-              <p>Camomila e mel</p>
-              <small>100g • cera de coco</small>
-            </div>
-          </article>
-
-          <article class="product-card small-card">
-            <img src="assets/vela-aurora.png" alt="Vela Aurora" />
-            <div class="product-info">
-              <div class="product-header">
-                <h3>Aurora</h3>
-                <span>R$ 39,90</span>
-              </div>
-              <p>Limão siciliano e baunilha</p>
-              <small>100g • cera de coco</small>
-            </div>
-          </article>
-
-          <article class="product-card small-card">
-            <img src="assets/vela-clarear.png" alt="Vela Clarear" />
-            <div class="product-info">
-              <div class="product-header">
-                <h3>Clarear</h3>
-                <span>R$ 39,90</span>
-              </div>
-              <p>Alecrim e hortelã</p>
-              <small>100g • cera de coco</small>
-            </div>
-          </article>
-
-          <article class="product-card small-card">
-            <img src="assets/vela-serenita.png" alt="Vela Serenitá" />
-            <div class="product-info">
-              <div class="product-header">
-                <h3>Serenitá</h3>
-                <span>R$ 39,90</span>
-              </div>
-              <p>Sálvia e sândalo</p>
-              <small>100g • cera de coco</small>
-            </div>
-          </article>
-
-          <article class="product-card small-card">
-            <img src="assets/vela-vesper.png" alt="Vela Vésper" />
-            <div class="product-info">
-              <div class="product-header">
-                <h3>Vésper</h3>
-                <span>R$ 39,90</span>
-              </div>
-              <p>Framboesa, sândalo e baunilha</p>
-              <small>100g • cera de coco</small>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="inline-cta boxed-cta center-text">
-          <p class="eyebrow">Loja online em breve</p>
-          <h2>Compre agora pela nossa Shopee</h2>
-          <p>Estamos preparando a loja com checkout próprio. Enquanto isso, você pode fazer seu pedido por lá ou solicitar uma encomenda personalizada.</p>
-          <div class="hero-actions center-actions">
-            <a class="btn btn-primary" href="#" title="Substitua este link pela URL da sua loja da Shopee">Comprar na Shopee</a>
-            <a class="btn btn-outline" href="encomendas.html">Encomenda personalizada</a>
+          <div class="form-group">
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome" required>
           </div>
-        </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefone">Telefone (opcional)</label>
+              <input type="text" id="telefone" name="telefone">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Tipo de produto</label>
+            <div class="choice-group">
+              <label class="choice-pill">
+                <input type="radio" name="tipo_produto" value="Vela" checked>
+                <span>Vela</span>
+              </label>
+
+              <label class="choice-pill">
+                <input type="radio" name="tipo_produto" value="Difusor">
+                <span>Difusor</span>
+              </label>
+
+              <label class="choice-pill">
+                <input type="radio" name="tipo_produto" value="Ambos">
+                <span>Ambos</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cenario">Cenário (opcional)</label>
+              <input type="text" id="cenario" name="cenario" placeholder="Casamento, presente, marca...">
+            </div>
+
+            <div class="form-group">
+              <label for="quantidade">Quantidade aproximada</label>
+              <input type="text" id="quantidade" name="quantidade" placeholder="Ex: 50 unidades">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="aromas">Aromas que você ama (opcional)</label>
+            <input type="text" id="aromas" name="aromas" placeholder="Canela, baunilha, jasmim...">
+          </div>
+
+          <div class="form-group">
+            <label for="detalhes">Detalhes do projeto *</label>
+            <textarea id="detalhes" name="detalhes" rows="6" placeholder="Conte sobre a estética, embalagem, prazo e qualquer referência." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary full">Enviar pedido</button>
+
+          <p class="form-note">Responderemos em até 2 dias úteis.</p>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a href="index.html" class="brand footer-brand">Synesthesia.</a>
+        <h3>Synesthesia.</h3>
         <p>Onde a criatividade encontra os sentidos.</p>
       </div>
 
       <div>
-        <p class="footer-title">Navegar</p>
-        <ul>
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="encomendas.html">Encomendas personalizadas</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
+        <h4>Navegar</h4>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="encomendas.html">Encomendas personalizadas</a>
+        <a href="contato.html">Contato</a>
       </div>
 
       <div>
-        <p class="footer-title">Conecte-se</p>
-        <ul>
-          <li><a href="mailto:eduardascosta92@gmail.com">eduardascosta92@gmail.com</a></li>
-          <li><a href="https://instagram.com/synesthesiabrand" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
+        <h4>Conecte-se</h4>
+        <p>eduardascosta92@gmail.com</p>
+        <p>@synesthesiabrand</p>
       </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <p>© 2025 Synesthesia. Feito à mão, com afeto.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
