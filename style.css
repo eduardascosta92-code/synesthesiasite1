@@ -848,3 +848,10 @@ a.contact-card:hover {
     padding: 40px 18px;
   }
 }
+.shop-cta-box .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
