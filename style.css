@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encomendas | Synesthesia.</title>
+  <meta name="description" content="Solicite uma encomenda personalizada da Synesthesia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Synesthesia.</a>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="encomendas.html">Encomendas</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-xl center-text">
+      <div class="container narrow">
+        <p class="eyebrow">Encomendas personalizadas</p>
+        <h1>Um aroma desenhado para o seu momento.</h1>
+        <p class="lead compact center-copy">
+          Criamos blends exclusivos, embalagens com sua identidade e edições numeradas. Conte sobre seu projeto e responderemos em até 2 dias úteis com uma proposta.
+        </p>
+      </div>
+    </section>
+
+    <section class="section pt-small">
+      <div class="container">
+        <form class="custom-form" action="https://formsubmit.co/eduardascosta92@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nova encomenda personalizada - Synesthesia">
+          <input type="hidden" name="_template" value="table">
+
+          <label>
+            Nome completo *
+            <input type="text" name="nome" required>
+          </label>
+
+          <div class="form-row">
+            <label>
+              E-mail *
+              <input type="email" name="email" required>
+            </label>
+            <label>
+              Telefone (opcional)
+              <input type="tel" name="telefone">
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>Tipo de produto</legend>
+            <div class="choice-group">
+              <label class="choice-pill"><input type="radio" name="tipo_de_produto" value="Vela" checked> <span>Vela</span></label>
+              <label class="choice-pill"><input type="radio" name="tipo_de_produto" value="Difusor"> <span>Difusor</span></label>
+              <label class="choice-pill"><input type="radio" name="tipo_de_produto" value="Ambos"> <span>Ambos</span></label>
+            </div>
+          </fieldset>
+
+          <div class="form-row">
+            <label>
+              Cenário (opcional)
+              <input type="text" name="cenario" placeholder="Casamento, presente, marca...">
+            </label>
+            <label>
+              Quantidade aproximada
+              <input type="text" name="quantidade" placeholder="Ex: 50 unidades">
+            </label>
+          </div>
+
+          <label>
+            Aromas que você ama (opcional)
+            <input type="text" name="aromas" placeholder="Cedro, baunilha, jasmim...">
+          </label>
+
+          <label>
+            Detalhes do projeto *
+            <textarea name="detalhes" rows="5" placeholder="Conte sobre a estética, embalagem, prazo e qualquer referência." required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-full">Enviar pedido</button>
+          <p class="form-note">Respondemos em até 2 dias úteis.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">Synesthesia.</a>
+        <p>Onde a criatividade encontra os sentidos.</p>
+      </div>
+
+      <div>
+        <p class="footer-title">Navegar</p>
+        <ul>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="encomendas.html">Encomendas personalizadas</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-title">Conecte-se</p>
+        <ul>
+          <li><a href="mailto:eduardascosta92@gmail.com">eduardascosta92@gmail.com</a></li>
+          <li><a href="https://instagram.com/synesthesiabrand" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2025 Synesthesia. Feito à mão, com afeto.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
