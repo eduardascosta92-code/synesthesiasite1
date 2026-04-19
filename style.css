@@ -500,3 +500,103 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.about-hero {
+  text-align: center;
+  padding: 92px 0 84px;
+}
+
+.about-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.about-title span {
+  color: var(--navy);
+  font-style: italic;
+}
+
+.about-description {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.about-highlight {
+  background: var(--bg-alt);
+  padding: 74px 0;
+  margin-bottom: 76px;
+}
+
+.about-highlight-inner {
+  text-align: center;
+}
+
+.about-highlight-inner p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.about-senses {
+  padding-bottom: 72px;
+}
+
+.section-title-narrow {
+  max-width: 900px;
+}
+
+.about-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 34px;
+}
+
+.about-column h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.about-column p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.about-closing {
+  text-align: center;
+  padding: 10px 0 88px;
+}
+
+.about-closing p {
+  max-width: 860px;
+  margin: 0 auto 28px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.about-closing span {
+  color: var(--navy);
+  font-style: italic;
+}
+
+.about-closing .btn-primary {
+  min-width: 220px;
+}
+
+@media (max-width: 980px) {
+  .about-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
