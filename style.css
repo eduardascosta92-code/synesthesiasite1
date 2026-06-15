@@ -101,6 +101,14 @@ a {
   align-items: center;
   padding: 88px 0 96px;
 }
+/*HERO 2 */
+.hero {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 72px;
+    align-items: center;
+    padding: 88pc 0 96px;
+}
 
 .hero-text h1 {
   font-family: "Playfair Display", serif;
