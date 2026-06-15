@@ -927,7 +927,7 @@ a.contact-card:hover {
 .love-banner-overlay h1 {
   font-family: "Playfair Display", serif;
   font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 400;
+  font-weight: 800;
   margin-bottom: 20px;
 }
 
