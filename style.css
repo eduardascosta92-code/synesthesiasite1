@@ -118,6 +118,23 @@ a {
   letter-spacing: -0.02em;
   margin-bottom: 28px;
 }
+/* HERO TEST 2*/
+
+.hero-test h1 {
+  font-family: "Playfair Display". serif;
+  font-size: clamp(3rem, 6vv, 4.7rem);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.hero-text h1 span {
+  color: var(--navy);
+  font-style: italic;
+}
+
+/*HERO TEXT H1 SPAN 2*/
 
 .hero-text h1 span {
   color: var(--navy);
@@ -130,6 +147,23 @@ a {
   color: var(--muted);
   margin-bottom: 30px;
 }
+
+/*HERO TEXT P 2*/
+
+.hero-text p {
+  max-width: 560px;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* HERO IMAGE 2 */
 
 .hero-image img {
   width: 100%;
