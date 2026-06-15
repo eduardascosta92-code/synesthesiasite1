@@ -897,3 +897,52 @@ a.contact-card:hover {
   gap: 14px;
   flex-wrap: wrap;
 }
+
+.love-banner {
+  height: 500px;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url("assets/banner-mes-do-amor.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 60px;
+}
+
+.love-banner-overlay {
+  text-align: center;
+  max-width: 800px;
+  padding: 40px;
+  color: white;
+}
+
+.love-banner-overlay h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.love-banner-overlay p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+}
+
+@media (max-width: 768px) {
+  .love-banner {
+    height: 380px;
+  }
+
+  .love-banner-overlay {
+    padding: 24px;
+  }
+}
