@@ -946,3 +946,23 @@ a.contact-card:hover {
     padding: 24px;
   }
 }
+
+.love-banner {
+  height: 500px;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.30),
+      rgba(0,0,0,0.30)
+    ),
+    url("assets/banner-mes-do-amor.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 60px;
+}
