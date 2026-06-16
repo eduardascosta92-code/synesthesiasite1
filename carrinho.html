@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho | Synesthesia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">Synesthesia.</div>
+
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="encomendas.html">Encomendas</a>
+        <a href="contato.html">Contato</a>
+        <a href="carrinho.html">Carrinho (<span class="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero container">
+      <span class="tag">Carrinho</span>
+      <h1 class="page-title">Seu pedido.</h1>
+      <p class="page-description">
+        Revise os produtos escolhidos e envie seu pedido pelo WhatsApp para confirmar disponibilidade, frete e pagamento.
+      </p>
+    </section>
+
+    <section class="cart-page container">
+      <div class="cart-layout">
+
+        <div class="cart-items-area">
+          <div id="cart-items"></div>
+        </div>
+
+        <aside class="checkout-box">
+          <h2>Finalizar pedido</h2>
+
+          <div class="cart-total-line">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">R$ 0,00</strong>
+          </div>
+
+          <p class="checkout-note">
+            O frete será confirmado pelo WhatsApp após o envio do pedido.
+          </p>
+
+          <form id="checkout-form" class="checkout-form">
+            <div class="form-group">
+              <label for="cliente-nome">Nome completo *</label>
+              <input type="text" id="cliente-nome" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cliente-telefone">Telefone *</label>
+              <input type="text" id="cliente-telefone" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cliente-cep">CEP</label>
+              <input type="text" id="cliente-cep">
+            </div>
+
+            <div class="form-group">
+              <label for="cliente-cidade">Cidade/Estado</label>
+              <input type="text" id="cliente-cidade" placeholder="Ex: Itu/SP">
+            </div>
+
+            <div class="form-group">
+              <label for="cliente-endereco">Endereço</label>
+              <input type="text" id="cliente-endereco" placeholder="Rua, número, bairro">
+            </div>
+
+            <div class="form-group">
+              <label for="cliente-observacao">Observações</label>
+              <textarea id="cliente-observacao" rows="4" placeholder="Algum detalhe sobre entrega, aroma, presente etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary full">
+              Enviar pedido pelo WhatsApp
+            </button>
+          </form>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Synesthesia.</h3>
+        <p>Onde a criatividade encontra os sentidos.</p>
+      </div>
+
+      <div>
+        <h4>Navegar</h4>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="encomendas.html">Encomendas personalizadas</a>
+        <a href="contato.html">Contato</a>
+      </div>
+
+      <div>
+        <h4>Conecte-se</h4>
+        <p>contatosynesthesiabrand@gmail.com</p>
+        <p>@synesthesiabrand</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
