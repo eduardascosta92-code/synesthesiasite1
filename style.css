@@ -1196,3 +1196,77 @@ a.contact-card:hover {
     width: 100%;
   }
 }
+/* AJUSTES FINAIS DA LOJA */
+.cart-count {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.product-card .btn-primary {
+  margin-top: auto;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card {
+  height: 100%;
+}
+
+.product-info .add-to-cart {
+  margin-top: 18px;
+}
+
+.add-to-cart:hover {
+  transform: translateY(-1px);
+}
+
+.checkout-form .btn-primary {
+  margin-top: 8px;
+}
+
+.cart-item-actions button:hover {
+  opacity: 0.75;
+}
+
+.cart-item-actions input:focus {
+  border-color: var(--navy);
+  outline: none;
+}
+
+.checkout-box input:focus,
+.checkout-box textarea:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 2px rgba(23, 59, 109, 0.08);
+}
+
+.checkout-box textarea {
+  resize: vertical;
+}
+
+@media (max-width: 720px) {
+  .nav nav a[href="carrinho.html"] {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .checkout-box h2 {
+    font-size: 1.7rem;
+  }
+
+  .cart-total-line {
+    font-size: 0.95rem;
+  }
+
+  .checkout-note {
+    font-size: 0.88rem;
+  }
+
+  .add-to-cart {
+    letter-spacing: 0.16em;
+    font-size: 0.66rem;
+  }
+}
