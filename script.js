@@ -1,109 +1,193 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato | Synesthesia.</title>
-  <meta name="description" content="Entre em contato com a Synesthesia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">Synesthesia.</a>
-      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="encomendas.html">Encomendas</a>
-        <a href="contato.html">Contato</a>
-      </nav>
-    </div>
-  </header>
+const WHATSAPP_NUMBER = "5511964412118"; // Troque pelo WhatsApp da Synesthesia com DDI + DDD, sem espaços.
+const CART_KEY = "synesthesia_cart";
 
-  <main>
-    <section class="section-xl center-text">
-      <div class="container narrow">
-        <p class="eyebrow">Contato</p>
-        <h1>Vamos conversar.</h1>
-        <p class="lead compact center-copy">
-          Dúvidas, parcerias, imprensa ou só uma boa conversa sobre aromas — a gente responde com calma.
-        </p>
+function getCart() {
+  return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  updateCartCount();
+}
+
+function formatMoney(value) {
+  return Number(value).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+}
+
+function updateCartCount() {
+  const count = getCart().reduce((total, item) => total + item.quantity, 0);
+
+  document.querySelectorAll(".cart-count").forEach(el => {
+    el.textContent = count;
+  });
+}
+
+function addToCart(product) {
+  const cart = getCart();
+  const existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  saveCart(cart);
+  alert(`${product.name} foi adicionado ao carrinho.`);
+}
+
+function removeFromCart(productId) {
+  const cart = getCart().filter(item => item.id !== productId);
+  saveCart(cart);
+  renderCartPage();
+}
+
+function changeQuantity(productId, quantity) {
+  const cart = getCart();
+  const item = cart.find(item => item.id === productId);
+
+  if (!item) return;
+
+  item.quantity = Math.max(1, Number(quantity));
+  saveCart(cart);
+  renderCartPage();
+}
+
+function getSubtotal(cart) {
+  return cart.reduce((total, item) => {
+    return total + Number(item.price) * item.quantity;
+  }, 0);
+}
+
+function setupProductButtons() {
+  document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+      addToCart({
+        id: button.dataset.id,
+        name: button.dataset.name,
+        price: Number(button.dataset.price),
+        image: button.dataset.image,
+        description: button.dataset.description,
+        detail: button.dataset.detail
+      });
+    });
+  });
+}
+
+function renderCartPage() {
+  const cartItems = document.getElementById("cart-items");
+  const subtotalEl = document.getElementById("cart-subtotal");
+
+  if (!cartItems || !subtotalEl) return;
+
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = `
+      <div class="empty-cart">
+        <h2>Seu carrinho está vazio.</h2>
+        <p>Escolha seus aromas favoritos para montar o pedido.</p>
+        <a href="produtos.html" class="btn-primary">Ver produtos</a>
       </div>
-    </section>
+    `;
 
-    <section class="section pt-small">
-      <div class="container narrow-left">
-        <div class="contact-grid">
-          <a class="contact-card" href="mailto:eduardascosta92@gmail.com">
-            <div class="contact-icon">✉</div>
-            <div>
-              <p class="contact-label">E-mail</p>
-              <p>eduardascosta92@gmail.com</p>
-            </div>
-          </a>
+    subtotalEl.textContent = formatMoney(0);
+    return;
+  }
 
-          <a class="contact-card" href="https://instagram.com/synesthesiabrand" target="_blank" rel="noopener noreferrer">
-            <div class="contact-icon">◌</div>
-            <div>
-              <p class="contact-label">Instagram</p>
-              <p>@synesthesiabrand</p>
-            </div>
-          </a>
+  cartItems.innerHTML = cart.map(item => `
+    <article class="cart-item">
+      <img src="${item.image}" alt="${item.name}">
 
-          <div class="contact-card">
-            <div class="contact-icon">◔</div>
-            <div>
-              <p class="contact-label">Atendimento</p>
-              <p>Seg a sex · até 18h</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-cta center-text">
-          <h2>Prefere uma encomenda personalizada?</h2>
-          <p>Use o formulário dedicado para projetos especiais — responderemos com uma proposta em até 2 dias úteis.</p>
-          <a class="btn btn-light btn-small" href="encomendas.html">Iniciar encomenda</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="index.html" class="brand footer-brand">Synesthesia.</a>
-        <p>Onde a criatividade encontra os sentidos.</p>
+      <div class="cart-item-info">
+        <h3>${item.name}</h3>
+        <p>${item.description || ""}</p>
+        <small>${item.detail || ""}</small>
       </div>
 
-      <div>
-        <p class="footer-title">Navegar</p>
-        <ul>
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="encomendas.html">Encomendas personalizadas</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
+      <div class="cart-item-actions">
+        <strong>${formatMoney(item.price)}</strong>
+
+        <label>
+          Qtd.
+          <input type="number" min="1" value="${item.quantity}" data-quantity-id="${item.id}">
+        </label>
+
+        <button type="button" class="remove-item" data-remove-id="${item.id}">
+          Remover
+        </button>
       </div>
+    </article>
+  `).join("");
 
-      <div>
-        <p class="footer-title">Conecte-se</p>
-        <ul>
-          <li><a href="mailto:eduardascosta92@gmail.com">eduardascosta92@gmail.com</a></li>
-          <li><a href="https://instagram.com/synesthesiabrand" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
+  subtotalEl.textContent = formatMoney(getSubtotal(cart));
 
-    <div class="container footer-bottom">
-      <p>© 2025 Synesthesia. Feito à mão, com afeto.</p>
-    </div>
-  </footer>
+  document.querySelectorAll("[data-quantity-id]").forEach(input => {
+    input.addEventListener("change", () => {
+      changeQuantity(input.dataset.quantityId, input.value);
+    });
+  });
 
-  <script src="script.js"></script>
-</body>
-</html>
+  document.querySelectorAll("[data-remove-id]").forEach(button => {
+    button.addEventListener("click", () => {
+      removeFromCart(button.dataset.removeId);
+    });
+  });
+}
+
+function setupCheckoutForm() {
+  const form = document.getElementById("checkout-form");
+
+  if (!form) return;
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const cart = getCart();
+
+    if (cart.length === 0) {
+      alert("Seu carrinho está vazio.");
+      return;
+    }
+
+    const nome = document.getElementById("cliente-nome").value.trim();
+    const telefone = document.getElementById("cliente-telefone").value.trim();
+    const cep = document.getElementById("cliente-cep").value.trim();
+    const cidade = document.getElementById("cliente-cidade").value.trim();
+    const endereco = document.getElementById("cliente-endereco").value.trim();
+    const observacao = document.getElementById("cliente-observacao").value.trim();
+
+    const itens = cart.map(item => {
+      return `• ${item.quantity}x ${item.name} - ${formatMoney(item.price)} cada`;
+    }).join("\n");
+
+    const subtotal = formatMoney(getSubtotal(cart));
+
+    const message =
+      `Olá! Quero finalizar um pedido na Synesthesia.\n\n` +
+      `Nome: ${nome}\n` +
+      `Telefone: ${telefone}\n` +
+      `CEP: ${cep || "não informado"}\n` +
+      `Cidade/Estado: ${cidade || "não informado"}\n` +
+      `Endereço: ${endereco || "não informado"}\n\n` +
+      `Itens:\n${itens}\n\n` +
+      `Subtotal: ${subtotal}\n` +
+      `Observações: ${observacao || "nenhuma"}\n\n` +
+      `Pode confirmar disponibilidade, frete e pagamento?`;
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
+  setupProductButtons();
+  renderCartPage();
+  setupCheckoutForm();
+});
