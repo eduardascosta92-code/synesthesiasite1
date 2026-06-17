@@ -1270,3 +1270,30 @@ a.contact-card:hover {
     font-size: 0.66rem;
   }
 }
+/* CTA MÊS DO AMOR NA HOME */
+.love-home-cta {
+  padding: 10px 0 80px;
+}
+
+.love-home-box {
+  background: #f7f1e8;
+  border: 1px solid var(--line);
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.love-home-box h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.love-home-box p {
+  max-width: 680px;
+  margin: 0 auto 26px;
+  color: var(--muted);
+  font-size: 1rem;
+}
